@@ -1,0 +1,81 @@
+package my.com.Wshare;
+
+import java.sql.Connection;
+//import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import my.com.Wshare.AdminDeletebookingBean;
+import my.com.Wshare.ConnManager;
+
+public class AdminDeletebookingDAO {
+	static Connection currentCon = null;
+	static ResultSet rs = null;
+
+	public static AdminDeletebookingBean selectQuery(AdminDeletebookingBean bean) throws SQLException {
+		currentCon = ConnManager.getConnection();
+		Statement stmt = null;
+		System.out.print("a");
+		System.out.println("select query");
+		try {
+//			String sql = "DELETE FROM chat WHERE Chat_id='85';";// select
+			String sql = "SELECT Booking_id FROM Booking1 WHERE Booking_id='" + bean.getdeletebooking_id() + "';";// select
+			
+			System.out.print(sql);	
+			// statement*************
+
+			currentCon = ConnManager.getConnection();
+			stmt = currentCon.createStatement();
+			rs = stmt.executeQuery(sql);
+
+			while (rs.next()) {
+			}
+
+			boolean more = rs.next();
+			if (!more) {
+				updateQuery(bean);
+			}
+			bean.setStatus(true);
+		} catch (Exception ex) {
+			bean.setStatus(false);
+			System.out.println("selectQuery failed: " + ex);
+		}
+
+		finally {
+			if (currentCon != null) {
+				try {
+					currentCon.close();
+				} catch (Exception ex) {
+				}
+			}
+			currentCon = null;
+		}
+		return bean;
+	}
+
+	public static void updateQuery(AdminDeletebookingBean bean) throws SQLException {
+		Connection localCon = ConnManager.getConnection();
+		// form
+		System.out.println("update query");
+		try {
+			String sql = "DELETE FROM Booking1 WHERE Booking_id='" + bean.getdeletebooking_id() + "';";
+			System.out.print(sql);
+			// select statement*************
+			
+			localCon.createStatement().executeUpdate(sql);
+
+		} catch (Exception ex) {
+			System.out.println("Insert record failed:" + ex);
+		} finally {
+			if (localCon != null) {
+				try {
+					localCon.close();
+				} catch (Exception ex) {
+				}
+			}
+			localCon = null;
+		}
+	}
+
+}

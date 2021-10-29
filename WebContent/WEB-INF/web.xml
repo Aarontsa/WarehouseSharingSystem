@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<filter>
+		<filter-name>CorsFilter</filter-name>
+		<filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>CorsFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+		<servlet-name>HomeServlet</servlet-name>
+		<servlet-class>my.com.Wshare.HomeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>HomeServlet</servlet-name>
+		<url-pattern>/HomeServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>RegisterServlet</servlet-name>
+		<servlet-class>my.com.Wshare.RegisterServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RegisterServlet</servlet-name>
+		<url-pattern>/RegisterServlet</url-pattern>
+	</servlet-mapping>
+
+    <servlet>
+    	<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>my.com.Wshare.LoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>/LoginServlet</url-pattern>
+	</servlet-mapping>
+
+    <servlet>
+    	<servlet-name>MapServlet</servlet-name>
+		<servlet-class>my.com.Wshare.MapServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MapServlet</servlet-name>
+		<url-pattern>/MapServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    	<servlet-name>RecommandServlet</servlet-name>
+		<servlet-class>my.com.Wshare.RecommandServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RecommandServlet</servlet-name>
+		<url-pattern>/RecommandServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+    	<servlet-name>ChatServlet</servlet-name>
+		<servlet-class>my.com.Wshare.ChatServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ChatServlet</servlet-name>
+		<url-pattern>/ChatServlet</url-pattern>
+	</servlet-mapping>
+
+    <servlet>
+    	<servlet-name>Chat2Servlet</servlet-name>
+		<servlet-class>my.com.Wshare.Chat2Servlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Chat2Servlet</servlet-name>
+		<url-pattern>/Chat2Servlet</url-pattern>
+	</servlet-mapping>
+
+    <servlet>
+    	<servlet-name>ChatlistServlet</servlet-name>
+		<servlet-class>my.com.Wshare.ChatlistServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ChatlistServlet</servlet-name>
+		<url-pattern>/ChatlistServlet</url-pattern>
+	</servlet-mapping>
+	
+    <servlet>
+    	<servlet-name>StorageServlet</servlet-name>
+		<servlet-class>my.com.Wshare.StorageServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>StorageServlet</servlet-name>
+		<url-pattern>/StorageServlet</url-pattern>
+	</servlet-mapping>
+
+    <servlet>
+    	<servlet-name>BookingServlet</servlet-name>
+		<servlet-class>my.com.Wshare.BookingServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BookingServlet</servlet-name>
+		<url-pattern>/BookingServlet</url-pattern>
+	</servlet-mapping>
+
+    <servlet>
+    	<servlet-name>HistoryServlet</servlet-name>
+		<servlet-class>my.com.Wshare.HistoryServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>HistoryServlet</servlet-name>
+		<url-pattern>/HistoryServlet</url-pattern>
+	</servlet-mapping>
+    
+    <servlet>
+    	<servlet-name>HistoryorderServlet</servlet-name>
+		<servlet-class>my.com.Wshare.HistoryorderServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>HistoryorderServlet</servlet-name>
+		<url-pattern>/HistoryorderServlet</url-pattern>
+	</servlet-mapping>
+
+    <servlet>
+    	<servlet-name>EditServlet</servlet-name>
+		<servlet-class>my.com.Wshare.EditServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EditServlet</servlet-name>
+		<url-pattern>/EditServlet</url-pattern>
+	</servlet-mapping>
+
+    <servlet>
+    	<servlet-name>ValidServlet</servlet-name>
+		<servlet-class>my.com.Wshare.ValidServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ValidServlet</servlet-name>
+		<url-pattern>/ValidServlet</url-pattern>
+	</servlet-mapping>
+
+    <servlet>
+    	<servlet-name>ValidchatlistServlet</servlet-name>
+		<servlet-class>my.com.Wshare.ValidchatlistServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ValidchatlistServlet</servlet-name>
+		<url-pattern>/ValidchatlistServlet</url-pattern>
+	</servlet-mapping>
+
+    <servlet>
+    	<servlet-name>RecommandStorageServlet</servlet-name>
+		<servlet-class>my.com.Wshare.RecommandStorageServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RecommandStorageServlet</servlet-name>
+		<url-pattern>/RecommandStorageServlet</url-pattern>
+	</servlet-mapping>
+
+    <servlet>
+    	<servlet-name>UseridServlet</servlet-name>
+		<servlet-class>my.com.Wshare.UseridServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UseridServlet</servlet-name>
+		<url-pattern>/UseridServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    	<servlet-name>ForgetpasswordsServlet</servlet-name>
+		<servlet-class>my.com.Wshare.ForgetpasswordsServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ForgetpasswordsServlet</servlet-name>
+		<url-pattern>/ForgetpasswordsServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    	<servlet-name>ValidbuttonServlet</servlet-name>
+		<servlet-class>my.com.Wshare.ValidbuttonServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ValidbuttonServlet</servlet-name>
+		<url-pattern>/ValidbuttonServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    	<servlet-name>CommentViewServlet</servlet-name>
+		<servlet-class>my.com.Wshare.CommentViewServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CommentViewServlet</servlet-name>
+		<url-pattern>/CommentViewServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    	<servlet-name>ChatlistidServlet</servlet-name>
+		<servlet-class>my.com.Wshare.ChatlistidServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ChatlistidServlet</servlet-name>
+		<url-pattern>/ChatlistidServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    	<servlet-name>RecommandStoragerateServlet</servlet-name>
+		<servlet-class>my.com.Wshare.RecommandStoragerateServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RecommandStoragerateServlet</servlet-name>
+		<url-pattern>/RecommandStoragerateServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    	<servlet-name>Chatuser2Servlet</servlet-name>
+		<servlet-class>my.com.Wshare.Chatuser2Servlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Chatuser2Servlet</servlet-name>
+		<url-pattern>/Chatuser2Servlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    	<servlet-name>UpdatestatusServlet</servlet-name>
+		<servlet-class>my.com.Wshare.UpdatestatusServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdatestatusServlet</servlet-name>
+		<url-pattern>/UpdatestatusServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    	<servlet-name>UpdatestatuslogoutServlet</servlet-name>
+		<servlet-class>my.com.Wshare.UpdatestatuslogoutServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdatestatuslogoutServlet</servlet-name>
+		<url-pattern>/UpdatestatuslogoutServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    	<servlet-name>RegistersizeServlet</servlet-name>
+		<servlet-class>my.com.Wshare.RegistersizeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RegistersizeServlet</servlet-name>
+		<url-pattern>/RegistersizeServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    	<servlet-name>EditstorageSaveServlet</servlet-name>
+		<servlet-class>my.com.Wshare.EditstorageSaveServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EditstorageSaveServlet</servlet-name>
+		<url-pattern>/EditstorageSaveServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+    	<servlet-name>AdminbookingreportServlet</servlet-name>
+		<servlet-class>my.com.Wshare.AdminbookingreportServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AdminbookingreportServlet</servlet-name>
+		<url-pattern>/AdminbookingreportServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    	<servlet-name>AdminuserreportServlet</servlet-name>
+		<servlet-class>my.com.Wshare.AdminuserreportServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AdminuserreportServlet</servlet-name>
+		<url-pattern>/AdminuserreportServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    	<servlet-name>ValidRatingServlet</servlet-name>
+		<servlet-class>my.com.Wshare.ValidRatingServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ValidRatingServlet</servlet-name>
+		<url-pattern>/ValidRatingServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    	<servlet-name>StorageTypeServlet</servlet-name>
+		<servlet-class>my.com.Wshare.StorageTypeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>StorageTypeServlet</servlet-name>
+		<url-pattern>/StorageTypeServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    	<servlet-name>ValidDatestatusServlet</servlet-name>
+		<servlet-class>my.com.Wshare.ValidDatestatusServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ValidDatestatusServlet</servlet-name>
+		<url-pattern>/ValidDatestatusServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    	<servlet-name>DatesshowServlet</servlet-name>
+		<servlet-class>my.com.Wshare.DatesshowServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DatesshowServlet</servlet-name>
+		<url-pattern>/DatesshowServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    	<servlet-name>DatesshowlServlet</servlet-name>
+		<servlet-class>my.com.Wshare.DatesshowlServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DatesshowlServlet</servlet-name>
+		<url-pattern>/DatesshowlServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    	<servlet-name>RecommandcountServlet</servlet-name>
+		<servlet-class>my.com.Wshare.RecommandcountServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RecommandcountServlet</servlet-name>
+		<url-pattern>/RecommandcountServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+    	<servlet-name>RecommandStoragecountServlet</servlet-name>
+		<servlet-class>my.com.Wshare.RecommandStoragecountServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RecommandStoragecountServlet</servlet-name>
+		<url-pattern>/RecommandStoragecountServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    	<servlet-name>RecommandresultcountServlet</servlet-name>
+		<servlet-class>my.com.Wshare.RecommandresultcountServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RecommandresultcountServlet</servlet-name>
+		<url-pattern>/RecommandresultcountServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    	<servlet-name>AdminusergraphServlet</servlet-name>
+		<servlet-class>my.com.Wshare.AdminusergraphServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AdminusergraphServlet</servlet-name>
+		<url-pattern>/AdminusergraphServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    	<servlet-name>UsergraphServlet</servlet-name>
+		<servlet-class>my.com.Wshare.UsergraphServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UsergraphServlet</servlet-name>
+		<url-pattern>/UsergraphServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    	<servlet-name>UsergraphorderServlet</servlet-name>
+		<servlet-class>my.com.Wshare.UsergraphorderServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UsergraphorderServlet</servlet-name>
+		<url-pattern>/UsergraphorderServlet</url-pattern>
+	</servlet-mapping>
+		
+	<servlet>
+    	<servlet-name>UpdatemessagestatusServlet</servlet-name>
+		<servlet-class>my.com.Wshare.UpdatemessagestatusServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdatemessagestatusServlet</servlet-name>
+		<url-pattern>/UpdatemessagestatusServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    	<servlet-name>ChaticonServlet</servlet-name>
+		<servlet-class>my.com.Wshare.ChaticonServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ChaticonServlet</servlet-name>
+		<url-pattern>/ChaticonServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    	<servlet-name>ChatnaviiconServlet</servlet-name>
+		<servlet-class>my.com.Wshare.ChatnaviiconServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ChatnaviiconServlet</servlet-name>
+		<url-pattern>/ChatnaviiconServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    	<servlet-name>AdminDeletebookingServlet</servlet-name>
+		<servlet-class>my.com.Wshare.AdminDeletebookingServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AdminDeletebookingServlet</servlet-name>
+		<url-pattern>/AdminDeletebookingServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    	<servlet-name>AdminEditServlet</servlet-name>
+		<servlet-class>my.com.Wshare.AdminEditServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AdminEditServlet</servlet-name>
+		<url-pattern>/AdminEditServlet</url-pattern>
+	</servlet-mapping>
+	
+</web-app>

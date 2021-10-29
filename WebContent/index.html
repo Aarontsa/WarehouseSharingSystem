@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Evaluation</title>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1, maximum-scale=1">
+<link href="css/app.css" rel="stylesheet">
+<!-- <link href="css/overrides.css" rel="stylesheet">  -->
+<link rel="stylesheet" type="text/css" href="./css/wsharefyp.css">
+
+</head>
+<body>
+	<!-- ****** Home ****** -->
+	<script id="Home" type="text/template">
+
+	<div>
+	
+
+  <body onload="initialize()">
+    <div id="navbar" class="navbartop">
+    <center class="navtittle">Warehouse Sharing System</center> 
+    <button hidden class="openbtn" onclick="openNav()">Menu</button> 
+	<div hidden class="loginlogout"><a class="Userlogin" id="Userlogin" href="" >User name</a> &nbsp;|&nbsp; <a class="Userlogout" id="Userlogout" href="" >Logout</a></div>
+</div>
+		
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">Close</a>
+  <a href="#">Home</a>
+  <a href="#">Storage</a>
+  <a href="#">Chat</a>
+  <a href="#">History</a>
+</div>
+
+
+<div>
+    <a id="Home" class="homeicon">
+        <center><img class="icontitle" src="./img/logo.png" alt=""></center>
+    </a>
+    <center>
+        <p id="" class="icontitle">Warehouse Sharing System</p>
+    </center>
+    <br>
+
+    <form id="Loginform" action="" class="Loginform">
+        <p class="hometxt">Users Login</p>
+        <br>
+        Username:<input spellcheck="false" autocomplete="off" autocorrect="off" id="Username" type="text" name="USER" placeholder="e.g. Alex" value="" style="width:200px" maxlength="99">
+        <br>
+        Passwords:<input spellcheck="false" autocomplete="off" autocorrect="off" id="Passwords" type="password" name="Password" placeholder="e.g. 123456" value="" style="width:200px" maxlength="20">
+        <br>
+        <a id="forgetpasswordsbutton" class="forgetpasswords">Forget passwords?</a>
+        <br>
+        <br>
+        <div id="Loginbutton" class="Loginbutton" name="Loginbutton"><a></a>Login</div>
+        <br>
+        <br>
+        <center>
+            <p class="hometxt">Register for first time using this system</p>
+        </center>
+
+        <center>
+            <div id="Registerbutton" class="Registerbutton" name="Registerbutton"><a></a>Register</div>
+        </center>
+		<br>
+    </form>
+    <br>
+
+    <div id="informationbar" class="informationbar">
+        <div class="Usermanu">
+		<p class="wordsbold">Convenient Storage for Your Luggage and Parcels</p>
+		<p>While you’re busy or not at home for waiting your parcels. Expeacily student who going to stay outside university which need to find a tempory place to put thier belongging 
+		With WSHARE, we help put your mind at ease by offering convenient baggage or parcels storage at a number of locations, 
+		and we do it with our easy online booking.</p>
+        </div>
+        <br>
+        <div class="Promblemssolved">
+            <p class="wordsbold">Find Our Storage</p>
+            <p>Once you’ve figured out your busy schedule use our booking system to search your destination for one of our storage locations. 
+			They’re always public places so you can feel safe dropping off and set as parcel collection point.
+			After successfully booking you are allow to simply drop your bags off or collect your parcels.</p>
+			<br> 
+			<p class="wordsbold">Our Storage forms:</p>
+			<p>Restaurants • Retail stores • House</p>
+        </div>
+        <br>
+        <div class="About">
+            <p class="wordsbold">Your Luggage Is Safe with Us</p>
+            <p>To give you the utmost peace of mind, when you book your storage through WSHARE, 
+			every booking is backed by a personal guarantee of up to RM200 for each item. 
+			Your transaction also takes place over secure servers and you can pay using Online banking.</p>
+        </div>
+    </div>
+    <br><br>
+</div>
+
+<!-- popup alert wrong password-->
+<div id="popupAlertWrongPassword" class="popOverlayAlert">
+    <div id="popupWrongPassword" class="popupAlertWrongPasswordportrait">
+        <a class="active" id="btnCloseAlertWrongPassword"><img class="btnpatternCloseAlert" src="./img/icon/icon_close2.png"
+                alt="HTML5 Icon"></img></a>
+        <br> <br>
+        <h3 class="txtblack">Invalid Username and Passwords.</h3>
+
+
+    </div>
+    </div>
+
+
+<!-- popup alert insert passwords -->
+<div id="popUpAlertInsertPassword" class="popOverlayAlert">
+    <div id="popUpInsertPassword" class="popUpAlertInsertPasswordportrait">
+        <a class="active" id="btnCloseAlertInsertPassword"><img class="btnpatternCloseAlert" src="./img/icon/icon_close2.png"
+                alt="HTML5 Icon"></img></a>
+        <br> <br>
+        <h3 class="txtblack">Please insert Username and Passwords.</h3>
+        </div>
+    </div>
+
+
+	</div>
+	</script>
+	
+
+		<!-- ****** Login ****** -->
+	<script id="Login" type="text/template">
+	<div>
+	<div>
+		<div id="navbar" class="navbartop">
+			<center class="navtittle">Warehouse Sharing System</center>
+			<button id="opennav" class="openbtn">Menu<img id="hideshowmessage" class="newsss" src="./img/new-post-16.png" alt=""></button>
+			<div class="loginlogout">
+				<div id="Userlogin" class="Userlogin" type="submit" value="">
+					<a></a>Edit profile
+					<p hidden id="edit" value=""></p>
+				</div>
+				|
+				<div id="Userlogout" class="Userlogout" type="submit" value="Logout">
+					<a></a>Logout
+				</div>
+			</div>
+		</div>
+
+		<div id="mySidebar" class="sidebar">
+			<a id="closenav" href="javascript:void(0)" class="closebtn">Close</a>
+			<a id="Gohome">Home</a> <a id="GoMap">Map</a> <a id="GoChatlist">Chat<img id="hideshowmessage1" class="newsss" src="./img/new-post-16.png" alt=""></a>
+			<a id="GoHistory">History</a>	<a id="GoReport">Report</a> <a id="GoAbout">About</a>
+		</div>
+
+		<div>
+
+			<a id="Home" class="homeicon">
+				<center>
+					<img class="icontitle" src="./img/logo.png" alt=""></img>
+				</center>
+			</a>
+			<center>
+				<p id="" class="icontitle">Warehouse Sharing System</p>
+			</center>
+			<br> <input type="hidden" id="Username" value=""> <input
+				type="hidden" id="Passwords" value="">
+			<center>
+				<div id="Gomapbutton" class="Gomapbutton" type="submit"
+					value="Find Storage">
+					<a></a>Find Storage
+				</div>			<br>	<div id="GoReportbutton" class="Gomapbutton" type="submit"
+					value="Report">
+					<a></a>Admin report
+				</div>
+			</center>
+			<br>
+			<div id="Todayhistory"></div>
+			<div id="countchat"></div>
+			<br>
+			<div id="informationbar" class="informationbar">
+				<div class="Usermanu1">
+
+					<p class="wordsbold">User manu</p>
+					<p>1. Register and login</p>
+					<p>2. Find a prefer storage</p>
+					<p>3. Book the storages</p>
+					<p>4. Fill in belongging details</p>
+					<p>5. make payment</p>
+					<p>6. give feedback</p>
+					<br>
+					<p class="wordsbold">Charges</p>
+					<p>1. RM1 per day for storage size (50x50cm)</p>
+					<p>1. RM2 per day for storage size (100x100cm)</p>
+					<p>2. RM1 per items</p>
+
+
+				</div>
+				
+			</div>
+			<br>
+			<div id="informationbar" class="informationbar">
+				<div class="Usermanu1">
+
+					<p class="wordsbold">PROHIBITED ITEMS</p>
+					<p>We are not allowed to store objects prohibited by law or
+						considered hazardous under the national law or whose packaging may
+						be harmful to humans, the environment or to other stored luggage.
+						BagBnb also doesn’t accept the following items:</p>
+					<br>
+					<p>1.Plants and live or dead animals.</p>
+					<p>2.Degrees e negotiable certificates (bills of lading).</p>
+					<p>3.Money (paper money, coins, credit cards and travellers
+						cheques).</p>
+					<p>4.Other non-negotiable money.</p>
+					<p>5.Material that could be defined as pornographic or indecent.</p>
+					<p>6.Material containing weapons or firearms.</p>
+					<p>7.Software containing high-value information.</p>
+					<p>8.Technological material (iPhone, iPad, Tablet, PC,
+						smartphones).</p>
+					<p>9.Waste.</p>
+					<p>10.Political material.</p>
+					<p>11.Dangerous materials.</p>
+					<p>12.Drugs or psychotropic substances.</p>
+					<p>13.Works of art.</p>
+					<p>14.Antiques.</p>
+					<p>15.Metal (gold and silver in any form) and precious stones.</p>
+					<p>16.Bulk goods.</p>
+					<p>17.Documents, public or private offers of investments, revenue
+						stamps, food stamps and fuel vouchers, etc.</p>
+
+				</div>
+				<br> 
+			</div>
+		</div>
+
+<br>
+	</div>
+	</script>
+	
+		<!-- ****** Register ****** -->
+	<script id="Register" type="text/template">
+	<div>
+<div id="navbar" class="navbartop">
+    <center class="navtittle">Warehouse Sharing System</center>
+    <button hidden id="opennav" class="openbtn">Menu</button>
+    <div hidden class="loginlogout">
+        <div id="Userlogin" class="Userlogin" type="submit" value=""><a></a>Edit profile<p hidden id="edit" value=""></p>
+        </div> | <div id="Userlogout" class="Userlogout" type="submit" value="Logout"><a></a>Logout</div>
+    </div>
+</div>
+
+<div id="mySidebar" class="sidebar">
+    <a id="closenav" href="javascript:void(0)" class="closebtn">Close</a>
+    <a id="Gohome">Home</a>
+    <a id="GoMap">Map</a>
+    <!-- <a >Chat</a> -->
+    <a id="GoHistory">History</a>
+</div>
+
+
+<div>
+    <form class="registerform" action="" enctype="multipart/form-data" target="upload_target">
+        <p id="" class="Profiledetailstitle">User details</p>
+
+        <table class="ScaleBorder" id="editform">
+            <tr class="edit">
+                <td>Gender:</td>
+                <td>
+                    <div id="wrapper" class="wrapper">
+                        <div id="image-holder1" class="profileimage"><img id="ProfilePicture" src="./img/user.png" alt="your image" /></div>
+                        <div id="image-holder2" class="profileimage"><img id="ProfilePicture" src="./img/male.png" alt="your image" /></div>
+                        <div id="image-holder3" class="profileimage"><img id="ProfilePicture" src="./img/female.png"
+                                alt="your image" /></div>
+                        <br>
+                        <table id="S_q1_2_if_yes1" class="Squestion2">
+                            <input type="radio" name="img" value="male" id="male"><label for="male"><div class="right"><span></span>Male</div></label>
+                            <input type="radio" name="img" value="female" id="female"><label for="female"><div class="right"><span></span>Female</div>
+                            </label>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr class="edit">
+                <td>User Type:</td>
+                <td>
+                        <table id="S_q1_2_if_yes2" class="Squestion2">
+                            <input type="radio" name="usertype" value="nostorage" id="nostorage"><label for="nostorage"><div class="right"><span></span>User</div></label>
+                            <input type="radio" name="usertype" value="storage" id="storage"><label for="storage"><div class="right"><span></span>Provider</div></label>
+                        </table>
+                </td>
+            </tr>
+            <tr id="ifstorage" class="edit">
+                <td>Storage size:</td>
+                <td>
+                        <table id="S_q1_2_if_yes3" class="Squestion2">
+                            <input type="radio" name="Storagesize" value="Not" id="Not" checked="checked">
+                            <input type="radio" name="Storagesize" value="Small(50cmx50cm)" id="Small"><label for="Small"><div class="right"><span></span>Small(50cmx50cm)</div></label>
+                          	<input type="radio" name="Storagesize" value="Large(100cmx100cm)" id="Large"><label for="Large"><div class="right"><span></span>Large(100cmx100cm)</div></label>
+                       </table>
+                </td>
+            </tr>
+            <tr class="edit">
+                <td>Username:</td>
+                <td><input id="Username" type="text" name="Username" placeholder="e.g. Alex" maxlength="99"></td>
+            </tr>
+            <tr class="edit">
+                <td>Passwords:</td>
+                <td><input id="Passwords" type="text" name="Passwords" placeholder="e.g. 123456" maxlength="20"></td>
+            </tr>
+            <tr class="edit">
+                <td>E-mail:</td>
+                <td><input id="Email" type="text" name="Email" placeholder="e.g. Alex@gmail.com" maxlength="49"></td>
+            </tr>
+            <tr class="edit">
+                <td>Mobile number:</td>
+                <td><input id="Mobilenumber" type="text" name="Mobilenumber" placeholder="e.g. 0191234567" maxlength="10"></td>
+            </tr>
+            <tr class="edit">
+                <td>Home address:</td>
+                <td><input type="text" id="Address" name="Homeaddress" placeholder="e.g. 30, lorong unigarden 2b, kota samarahan, sarawak" maxlength="199">
+                </td>
+            </tr>
+            <tr class="edit">
+                <td>Description:</td>
+                <td><input type="text" id="Description" name="Description" placeholder="e.g. very friendly" maxlength="199" ></td>
+            </tr>
+        </table>
+        <br>
+        <center>
+            <div hidden id="map" class="mapsize"></div>
+        </center>
+        <input id="lat" type="hidden" value="">
+        <br>
+        <input id="lng" type="hidden" value="">
+        <br><br>
+        <center>
+            <div id="backbutton" class="backbutton" type="submit" value="Back"><a></a>Back</div>&nbsp;&nbsp;
+            <div id="Registerbutton" class="Registerbutton" type="submit" value="Register"><a></a>Register</div>
+        </center>
+        <br><br>
+    </form>
+</div>
+
+<!-- popup alert no location-->
+<div id="popupAlernolocation" class="popOverlayAlert">
+    <div id="popupnolocation" class="popupAlertWrongPasswordportrait">
+        <a class="active" id="btnCloseAlertnolocation"><img class="btnpatternCloseAlert" src="./img/icon/icon_close2.png"
+                alt="HTML5 Icon"></img></a>
+        <br> <br>
+        <h3 class="txtblack">Invalid location</h3>
+    </div>
+    </div>
+
+<!-- popup alert incomplete-->
+<div id="popupAlerincomplete" class="popOverlayAlert">
+    <div id="popupIncomplete" class="popupAlertWrongPasswordportrait">
+        <a class="active" id="btnCloseAlertIncomplete"><img class="btnpatternCloseAlert" src="./img/icon/icon_close2.png"
+                alt="HTML5 Icon"></img></a>
+        <br> <br>
+        <h3 class="txtblack">Incomplete filling the form</h3>
+    </div>
+    </div>
+
+<!-- popup alert Username is not avalaible-->
+<div id="popupAlernotavalaiblename" class="popOverlayAlert">
+    <div id="popupNotavalaiblename" class="popupAlertWrongPasswordportrait">
+        <a class="active" id="btnCloseAlertNotavalaiblename"><img class="btnpatternCloseAlert" src="./img/icon/icon_close2.png"
+                alt="HTML5 Icon"></img></a>
+        <br> <br>
+        <h3 class="txtblack">Username is not avalaible</h3>
+    </div>
+    </div>
+
+<!-- popup alert Login in with your new account -->
+<div id="popupAlertloginagain" class="popOverlayAlert">
+    <div id="messagebox" class="popupAlertloginagainportrait">
+        <a class="active" id="btnClosepoploginagain" name="btnClosepoploginagain"><img class="btnpatternClose" src="./img/icon/icon_close2.png"
+                alt="HTML5 Icon"></img></a>
+        <br><br>
+        <h3 class="txtblack">Please Login again with your new account.</h3>
+
+    </div>
+</div>
+	</div>
+	</script>
+	
+			<!-- ****** Edit ****** -->
+	<script id="Edit" type="text/template">
+	<div>
+<div id="navbar" class="navbartop">
+    <center class="navtittle">Warehouse Sharing System</center>
+    <button id="opennav" class="openbtn">Menu<img id="hideshowmessage" class="newsss" src="./img/new-post-16.png" alt=""></button>
+    <div class="loginlogout">
+        <!-- <div id="Userlogin" class="Userlogin" type="submit" value=""><a></a>Edit profile<p hidden id="edit" value=""></p>
+        </div> |  -->
+        <div id="Userlogout" class="Userlogout" type="submit" value="Logout"><a></a>Logout</div>
+    </div>
+</div>
+
+<div id="mySidebar" class="sidebar">
+    <a id="closenav" href="javascript:void(0)" class="closebtn">Close</a>
+    <a id="Gohome">Home</a>
+    <a id="GoMap">Map</a>
+    <a id="GoChatlist">Chat<img id="hideshowmessage1" class="newsss" src="./img/new-post-16.png" alt=""></a>
+    <a id="GoHistory">History</a>
+	<a id="GoReport">Report</a>
+    <a id="GoAbout">About</a>
+</div>
+
+		
+<div id="editform">
+
+</div>
+<div id="countchat"></div>
+<!-- popup alert incomplete-->
+<div id="popupAlerincomplete" class="popOverlayAlert">
+    <div id="popupIncomplete" class="popupAlertWrongPasswordportrait">
+        <a class="active" id="btnCloseAlertIncomplete"><img class="btnpatternCloseAlert" src="./img/icon/icon_close2.png"
+                alt="HTML5 Icon"></img></a>
+        <br> <br>
+        <h3 class="txtblack">Incomplete filling the form</h3>
+    </div>
+    </div>
+
+<!-- popup alert no location-->
+<div id="popupAlernolocation" class="popOverlayAlert">
+    <div id="popupnolocation" class="popupAlertWrongPasswordportrait">
+        <a class="active" id="btnCloseAlertnolocation"><img class="btnpatternCloseAlert" src="./img/icon/icon_close2.png"
+                alt="HTML5 Icon"></img></a>
+        <br> <br>
+        <h3 class="txtblack">Invalid location</h3>
+    </div>
+    </div>
+
+			<!-- popup alert answers all question -->
+			<div id="popupAlertloginagain" class="popOverlayAlert">
+				<div id="messagebox" class="popupAlertloginagainportrait">
+					<a class="active" id="btnClosepoploginagain" name="btnClosepoploginagain"><img class="btnpatternClose" src="./img/icon/icon_close2.png"  alt="HTML5 Icon" ></img></a>
+					<br><br>
+					<h3 class="txtblack">Successfully save.</h3>
+
+				</div>
+			</div>
+
+	</div>
+	</script>
+	
+			<!-- ****** Map ****** -->
+	<script id="Map" type="text/template">
+	<div>
+<div id="navbar" class="navbartop">
+    <center class="navtittle">Warehouse Sharing System</center>
+    <button id="opennav" class="openbtn">Menu<img id="hideshowmessage" class="newsss" src="./img/new-post-16.png" alt=""></button>
+    <div class="loginlogout">
+        <div id="Userlogin" class="Userlogin" type="submit" value=""><a></a>Edit profile<p hidden id="edit" value=""></p>
+        </div> | <div id="Userlogout" class="Userlogout" type="submit" value="Logout"><a></a>Logout</div>
+    </div>
+</div>
+
+<div id="mySidebar" class="sidebar">
+    <a id="closenav" href="javascript:void(0)" class="closebtn">Close</a>
+    <a id="Gohome">Home</a>
+    <a id="GoMap">Map</a>
+    <a id="GoChatlist">Chat<img id="hideshowmessage1" class="newsss" src="./img/new-post-16.png" alt=""></a>
+    <a id="GoHistory">History</a>
+	<a id="GoReport">Report</a>
+    <a id="GoAbout">About</a>
+</div>
+
+<div  class="pickdatebackground">
+<center>
+<table id="searchboxformap" style="width: 100%;">
+<tr>
+    <td style="width: 20%; text-align: center;">Enter Location:</td>
+    <td style="width: 80%;"><input class="centered" type="text" id="pac-input"></td>
+</tr>
+</table>
+</center>
+<br>
+<center>
+<div id="Searchbutton" class="Searchbutton" type="submit" value="Search"><a ></a>Search</div>
+<div id="Recommandationbutton" class="Recommandationbutton" type="submit" value="Recommandation"><a ></a>Recommandation</div>
+</center>
+
+<!-- <div class="FristFilter"><ol class="BackgroundColorFilter"><li style="list-style-type: none">
+    <center>Enter Location:
+    <input class="centered" type="text" id="pac-input"></center>		
+    </li></ol></div><br>
+
+<center><div  class="SecondFilter"><ol class="BackgroundColorFilter"><li style="list-style-type: none">
+<center><div id="Searchbutton" class="Searchbutton" type="submit" value="Search"><a ></a>Search</div>
+<div id="Recommandationbutton" class="Recommandationbutton" type="submit" value="Recommandation"><a ></a>Recommandation</div></center>
+		</li></ol></div></center> -->
+</div>
+<br>
+	<center><div id="map"></div></center>
+    <br>
+	<div id="countchat"></div>
+    <input type="hidden" id="Username" value="">
+    <input type="hidden" id="Passwords" value="">
+    <center><div id="backbutton" class="backbutton" type="submit" value="Back"><a></a>Back</div></center>
+<br><br>
+
+<!-- popup alert no location-->
+<div id="popupAlernolocation" class="popOverlayAlert">
+    <div id="popupnolocation" class="popupAlertWrongPasswordportrait">
+        <a class="active" id="btnCloseAlertnolocation"><img class="btnpatternCloseAlert" src="./img/icon/icon_close2.png"
+                alt="HTML5 Icon"></img></a>
+        <br> <br>
+        <h3 class="txtblack">Invalid location</h3>
+    </div>
+    </div>
+  </body>
+	</div>
+	</script>
+
+
+ 	<!-- ****** Storage ****** -->
+	<script id="Storage" type="text/template">
+    <div>
+<div id="navbar" class="navbartop">
+    <center class="navtittle">Warehouse Sharing System</center>
+    <button id="opennav" class="openbtn">Menu<img id="hideshowmessage" class="newsss" src="./img/new-post-16.png" alt=""></button>
+    <div class="loginlogout">
+        <div id="Userlogin" class="Userlogin" type="submit" value=""><a></a>Edit profile<p hidden id="edit" value=""></p>
+        </div> | <div id="Userlogout" class="Userlogout" type="submit" value="Logout"><a></a>Logout</div>
+    </div>
+</div>
+
+<div id="mySidebar" class="sidebar">
+    <a id="closenav" href="javascript:void(0)" class="closebtn">Close</a>
+    <a id="Gohome">Home</a>
+    <a id="GoMap">Map</a>
+    <a id="GoChatlist">Chat<img id="hideshowmessage1" class="newsss" src="./img/new-post-16.png" alt=""></a>
+    <a id="GoHistory">History</a>
+	<a id="GoReport">Report</a>
+    <a id="GoAbout">About</a>
+</div>
+
+<div id="Storageform">
+
+</div>
+
+<p class="wordsboldcomment">Comment</p>
+<div id="Commentview" class="Commentview">
+
+</div>
+<div id="countchat"></div>
+<br>
+<center><div id="backbutton" class="backbutton" type="submit" value="Back"><a></a>Back</div></center>
+<br><br>
+
+<div id="Chatlist_id">
+</div>
+
+<!-- popup alert copy-->
+<div id="popupAlertcopy" class="popOverlayAlert">
+    <div id="popupcopy" class="popupAlertWrongPasswordportrait">
+        <a class="active" id="btnCloseAlertcopy"><img class="btnpatternCloseAlert" src="./img/icon/icon_close2.png"
+                alt="HTML5 Icon"></img></a>
+        <br> <br>
+        <h3 class="txtblack">Copied to Clipboard</h3>
+    </div>
+    </div>
+
+<!-- popup alert full-->
+<div id="popupAlerfull" class="popOverlayAlert">
+    <div id="popupFull" class="popupAlertWrongPasswordportrait">
+        <a class="active" id="btnCloseAlertFull"><img class="btnpatternCloseAlert" src="./img/icon/icon_close2.png"
+                alt="HTML5 Icon"></img></a>
+        <br> <br>
+        <h3 class="txtblack">Storage full</h3>
+    </div>
+    </div>
+    <input type="hidden" id="Storage_Username" value="">
+    <input type="hidden" id="CStorage_Userid" value="">
+        <input type="hidden" id="Username" value="">
+    <input type="hidden" id="Passwords" value="">
+	</div>
+
+	</script>
+	
+			<!-- ****** Booking ****** -->
+	<script id="Booking" type="text/template">
+	<div>
+
+<div id="navbar" class="navbartop">
+    <center class="navtittle">Warehouse Sharing System</center>
+    <button id="opennav" class="openbtn">Menu<img id="hideshowmessage" class="newsss" src="./img/new-post-16.png" alt=""></button>
+    <div class="loginlogout">
+        <div id="Userlogin" class="Userlogin" type="submit" value=""><a></a>Edit profile<p hidden id="edit" value=""></p>
+        </div> | <div id="Userlogout" class="Userlogout" type="submit" value="Logout"><a></a>Logout</div>
+    </div>
+</div>
+
+<div id="mySidebar" class="sidebar">
+    <a id="closenav" href="javascript:void(0)" class="closebtn">Close</a>
+    <a id="Gohome">Home</a>
+    <a id="GoMap">Map</a>
+    <a id="GoChatlist">Chat<img id="hideshowmessage1" class="newsss" src="./img/new-post-16.png" alt=""></a>
+    <a id="GoHistory">History</a>
+	<a id="GoReport">Report</a>
+    <a id="GoAbout">About</a>
+</div>
+
+    <input type="hidden" id="Storage_Username" value="">
+    <input type="hidden" id="CStorage_Userid" value="">
+    <input type="hidden" id="Username" value="">
+    <input type="hidden" id="Passwords" value="">
+	<div id="ValidDatestatus"></div>
+	<div id="countchat"></div>
+
+    <div id="bookingformsize">
+        <form class="registerform" action="">
+            <p id="" class="Profiledetailstitle">Parcel/ Belongging details</p>
+
+            <table class="ScaleBorder" id="bookingform">
+                <tr class="edit">
+                    <td>Name:</td>
+                    <td><input id="Name" type="text" name="Name" placeholder="Alex" value="" maxlength="50"></td>
+                </tr>
+                <tr class="edit">
+                    <td>Quantity:</td>
+                    <td><input id="Quantity" type="text" name="Quantity" placeholder="1" value="" maxlength="10"></td>
+                </tr>
+                <tr class="edit">
+                <td>Storage size:</td>
+                <td><select id="boksize" type="text" name="boksize">
+                            <option disabled selected value="">--</option>
+                            <option value="Small">Small(50cmx50cm)</option>
+                            <option value="Large">Large(100cmx100cm)</option>
+                        </select></td>
+                </tr>
+                <tr class="edit">
+                    <td>Description:</td>
+                    <td><input id="Description" type="text" name="Description" placeholder="goods from shopee" value="" maxlength="50"></td>
+                </tr>
+                <tr class="edit">
+                    <td>Mobile number:</td>
+                    <td><input id="Mobilenumber" type="text" name="Mobilenumber" placeholder="0191234567" value="" maxlength="10"></td>
+                </tr>
+                <tr class="edit">
+                    <td>Check in:</td>
+                    <td><input id="Checkin" type="date" name="Checkin" value=""></td>
+                </tr>
+                <tr class="edit">
+                    <td>Check out:</td>
+                    <td><input id="Checkout" type="date" name="Checkout" value=""></td>
+                </tr>
+                <tr class="edit">
+                    <td>Online bank:</td>
+                    <td><select id="Onlinebank" type="text" name="Onlinebank">
+                            <option disabled selected value="">--</option>
+                            <option value="CIMB">CIMB</option>
+                            <option value="Maybank">Maybank</option>
+                        </select></td>
+                    <!-- <input id="Onlinebank" type="text" name="Onlinebank" value="CIMB"> -->
+                </tr>
+            </table>
+            <br>
+            <!-- <table class="ScaleBorder" id="bookingform">
+            
+                <tr class="edit">
+                    <td>Price:</td>
+                    <td><input id="Price" type="text" name="Price" value=""></td>
+                </tr>
+            
+            </table> -->
+			<input id="Pricestorage" type="hidden" name="Pricestorage" value="">
+            <input id="Price" type="hidden" name="Price" value="">
+            <input type="hidden" id="days" name="days" value="">
+            <input type="hidden" id="user_id" name="Userid" value="">
+            <br><br>
+            <center>
+                <div id="backbutton1" class="backbutton" type="submit" value="Back"><a></a>Back</div>&nbsp;&nbsp;
+                <div id="SumbitbuttonCIMB" class="Sumbitbutton" type="submit" value="Sumbitbutton"><a></a>Sumbit</div>
+                <div id="SumbitbuttonMaybank" class="Sumbitbutton" type="submit" value="Sumbitbutton"><a></a>Sumbit</div>
+            </center>
+            <br><br>
+        </form>
+        
+    </div>
+
+<!-- popup alert full-->
+<div id="popupAlerfull" class="popOverlayAlert">
+    <div id="popupFull" class="popupAlertWrongPasswordportrait">
+        <a class="active" id="btnCloseAlertFull"><img class="btnpatternCloseAlert" src="./img/icon/icon_close2.png"
+                alt="HTML5 Icon"></img></a>
+        <br> <br>
+        <h3 class="txtblack">Storage(50cmx50cm) not available between:</h3>
+		<br>
+	<div id="showdate"><br></div>
+	<br><br>
+    </div>
+    </div>
+
+<!-- popup alert full-->
+<div id="popupAlerfull1" class="popOverlayAlert">
+    <div id="popupFull1" class="popupAlertWrongPasswordportrait">
+        <a class="active" id="btnCloseAlertFull1"><img class="btnpatternCloseAlert" src="./img/icon/icon_close2.png"
+                alt="HTML5 Icon"></img></a>
+        <br> <br>
+        <h3 class="txtblack">Storage(100cmx100cm) not available between:</h3>
+		<br>
+	<div id="showdate1"><br></div>
+	<br><br>
+    </div>
+    </div>
+
+<!-- popup alert incomplete-->
+<div id="popupAlerincomplete" class="popOverlayAlert">
+    <div id="popupIncomplete" class="popupAlertWrongPasswordportrait">
+        <a class="active" id="btnCloseAlertIncomplete"><img class="btnpatternCloseAlert" src="./img/icon/icon_close2.png"
+                alt="HTML5 Icon"></img></a>
+        <br> <br>
+        <h3 id="nodate" class="txtblack">Incomplete filling the form</h3>
+    </div>
+    </div>
+
+<!-- popup alert incomplete-->
+<div id="popupAlerincomplete1" class="popOverlayAlert">
+    <div id="popupIncomplete1" class="popupAlertWrongPasswordportrait">
+        <a class="active" id="btnCloseAlertIncomplete1"><img class="btnpatternCloseAlert" src="./img/icon/icon_close2.png"
+                alt="HTML5 Icon"></img></a>
+        <br> <br>
+
+		<h3 id="wrongdate" class="txtblack">Wrong date input</h3>
+    </div>
+    </div>
+
+			<!-- popup alert answers all question -->
+			<div id="popupAlertloginagain" class="popOverlayAlert">
+				<div id="messagebox" class="popupAlertloginagainportrait">
+					<a class="active" id="btnClosepoploginagain" name="btnClosepoploginagain"><img class="btnpatternClose" src="./img/icon/icon_close2.png"  alt="HTML5 Icon" ></img></a>
+					<br><br>
+					<h3 class="txtblack">Successfully save.</h3>
+
+				</div>
+			</div>
+
+    <!-- popup alert answers all question -->
+    <div id="popupAlertSubmitCIMB" class="popOverlayAlert">
+        <div id="messageboxCIMB" class="popupAlertCIMBportrait">
+            <a class="active" id="btnClosepopSumbit1"><img  class="btnpatternClose" src="./img/icon/icon_close2.png" alt="HTML5 Icon"></img></a>
+            <br> <br>
+            <h3 class="txtblack">Comforamation</h3>
+            <p style="text-align: center;">Are you sure you want to make the booking?</p>
+            <div class="btnpopupposition">
+                <tr class="edit">
+                    <td>Price:</td>
+                    <td><input id="Price1" type="text" name="Price1" disabled="disabled" value=""></td>
+                </tr><br><br>
+                    <div name="btnXsubmit" id="btnXsubmitCIMB" class="btnXsubmit">
+                    <a>No</a></div>&nbsp;&nbsp;<div name="btnsubmit" id="btnsubmitCIMB" class="btnsubmit">
+                    <a>Yes</a></div>
+            </div>
+        </div>
+    </div>
+
+        <!-- popup alert answers all question -->
+    <div id="popupAlertSubmitMaybank" class="popOverlayAlert">
+        <div id="messageboxMaybank" class="popupAlertMaybankportrait">
+            <a class="active" id="btnClosepopSumbit2"><img  class="btnpatternClose" src="./img/icon/icon_close2.png" alt="HTML5 Icon"></img></a>
+            <br> <br>
+            <h3 class="txtblack">Comforamation</h3>
+            <p style="text-align: center;">Confirm to make payment for the booking?</p>
+            <div class="btnpopupposition">
+
+                <tr class="edit">
+                    <td>Price:</td>
+                    <td><input id="Price2" type="text" name="Price1" value=""></td>
+                </tr><br><br>
+                <div name="btnXsubmit" id="btnXsubmitMaybank" class="btnXsubmit">
+                    <a>No</a></div>&nbsp;&nbsp;<div name="btnsubmit" id="btnsubmitMaybank" class="btnsubmit">
+                    <a>Yes</a></div>
+            </div>
+        </div>
+    </div>
+	</div>
+	</script>
+	
+		<!-- ****** History ****** -->
+	<script id="History" type="text/template">
+
+	<div>
+<div id="navbar" class="navbartop">
+    <center class="navtittle">Warehouse Sharing System</center>
+    <button id="opennav" class="openbtn">Menu<img id="hideshowmessage" class="newsss" src="./img/new-post-16.png" alt=""></button>
+    <div class="loginlogout">
+        <div id="Userlogin" class="Userlogin" type="submit" value=""><a></a>Edit profile<p hidden id="edit" value=""></p>
+        </div> | <div id="Userlogout" class="Userlogout" type="submit" value="Logout"><a></a>Logout</div>
+    </div>
+</div>
+
+<div id="mySidebar" class="sidebar">
+    <a id="closenav" href="javascript:void(0)" class="closebtn">Close</a>
+    <a id="Gohome">Home</a>
+    <a id="GoMap">Map</a>
+    <a id="GoChatlist">Chat<img id="hideshowmessage1" class="newsss" src="./img/new-post-16.png" alt=""></a>
+    <a id="GoHistory">History</a>
+	<a id="GoReport">Report</a>
+    <a id="GoAbout">About</a>
+</div>
+
+    <p id="" class="Profiledetailstitle">History</p>
+    <center><div id="Historybook" class="Download" type="submit" value=""><a></a>Booking</div>
+    <div id="Historyorder" class="Download" type="submit" value=""><a></a>Order</div></center><br>
+
+    <div id="contnerer">
+	
+    </div>
+
+    <div id="contnerer1">
+	
+    </div>
+	<div id="editor"></div>
+	<div id="countchat"></div>
+	<input type="hidden" id="CStorage_Userid" value="">
+	<input type="hidden" id="CUsername" value="">
+    <input type="hidden" id="CPasswords" value="">
+    <input type="hidden" id="UserS" value="">
+
+
+
+			<!-- popup alert answers all question -->
+			<div id="popupAlertloginagain" class="popOverlayAlert">
+				<div id="messagebox" class="popupAlertloginagainportrait">
+					<a class="active" id="btnClosepoploginagain" name="btnClosepoploginagain"><img class="btnpatternClose" src="./img/icon/icon_close2.png"  alt="HTML5 Icon" ></img></a>
+					<br><br>
+					<h3 class="txtblack">Successfully save.</h3>
+
+				</div>
+			</div>
+    
+        <!-- popup alert answers all question -->
+    <div id="popupAlertSubmitRating" class="popOverlayAlert">
+        <div id="messageboxRating" class="popupAlertRatingportrait">
+            <a class="active" id="btnClosepopSumbit"><img  class="btnpatternClose" src="./img/icon/icon_close2.png" alt="HTML5 Icon"></img></a>
+            <br> <br>
+            <h3 class="txtblack">Rating</h3>
+            <p class="ratingwords">Would you mind rate this storage?</p>
+            <div class="btnpopupposition">
+<table class="Pquestion1">
+<tr><td><ol><li style="list-style-type: none">
+<div class="spaceRadioBtnportrait">
+<input type="radio" name="Rating" value="1" id="Rating1"><label for="Rating1"><div class="top">1</div><span></span></label>
+<input type="radio" name="Rating" value="2" id="Rating2"><label for="Rating2"><div class="top">2</div><span></span></label> 
+<input type="radio" name="Rating" value="3" id="Rating3"><label for="Rating3"><div class="top">3</div><span></span></label>
+<input type="radio" name="Rating" value="4" id="Rating4"><label for="Rating4"><div class="top">4</div><span></span></label>
+<input type="radio" name="Rating" value="5" id="Rating5"><label for="Rating5"><div class="top">5</div><span></span></label>
+</div>
+</li></ol></td></tr>
+</table>
+<table class="Pquestion1">
+<tr><td><ol><li style="list-style-type: none">
+<div class="spaceRadioBtnportrait">
+Comment:<textarea class="textareasizeportrait" name="commentUser" value="" id="commentUser" maxlength="199"></textarea>
+</div>
+</li></ol></td></tr>
+</table><br>
+
+                    <div name="btnXsubmit" id="btnXsubmitRating" class="btnXsubmit">
+                    <a>Submit</a></div>
+                    <!-- &nbsp;&nbsp;<div name="btnsubmit" id="btnsubmitCIMB" class="btnsubmit">
+                    <a>Yes</a></div> -->
+            </div>
+        </div>
+    </div>
+
+
+<!-- popup alert incomplete-->
+<div id="popupAlerincomplete" class="popOverlayAlert">
+    <div id="popupIncomplete" class="popupAlertWrongPasswordportrait">
+        <a class="active" id="btnCloseAlertIncomplete"><img class="btnpatternCloseAlert" src="./img/icon/icon_close2.png"
+                alt="HTML5 Icon"></img></a>
+        <br> <br>
+        <h3 class="txtblack">Incomplete filling the form</h3>
+    </div>
+    </div>
+
+<!-- popup alert thankyou-->
+<div id="popupAlertThankyou" class="popOverlayAlert">
+    <div id="popupThankyou" class="popupAlertWrongPasswordportrait">
+        <a class="active" id="btnClosepopThankyou"><img class="btnpatternCloseAlert" src="./img/icon/icon_close2.png"
+                alt="HTML5 Icon"></img></a>
+        <br> <br>
+        <h3 class="txtblack">Thanks you for the feedback</h3>
+    </div>
+    </div>
+
+	</div>
+	</script>
+
+    <!-- ****** Chatlist ****** -->
+	<script id="Chatlist" type="text/template">
+
+	<div>
+<div id="navbar" class="navbartop">
+    <center class="navtittle">Warehouse Sharing System</center>
+    <button id="opennav" class="openbtn">Menu<img id="hideshowmessage" class="newsss" src="./img/new-post-16.png" alt=""></button>
+    <div class="loginlogout">
+        <div id="Userlogin" class="Userlogin" type="submit" value=""><a></a>Edit profile<p hidden id="edit" value=""></p>
+        </div> | <div id="Userlogout" class="Userlogout" type="submit" value="Logout"><a></a>Logout</div>
+    </div>
+</div>
+
+<div id="mySidebar" class="sidebar">
+    <a id="closenav" href="javascript:void(0)" class="closebtn">Close</a>
+    <a id="Gohome">Home</a>
+    <a id="GoMap">Map</a>
+    <a id="GoChatlist">Chat<img id="hideshowmessage1" class="newsss" src="./img/new-post-16.png" alt=""></a>
+    <a id="GoHistory">History</a>
+	<a id="GoReport">Report</a>
+    <a id="GoAbout">About</a>
+</div>
+
+<p id="" class="Profiledetailstitle">Chat list</p>
+<div id="chatlist" class="chatlist">
+
+</div>
+
+<div id="countchat">
+
+</div>
+
+<input type="hidden" id="Chatlist_id" value="">
+    <input type="hidden" id="Storage_Username" value="">
+    <input type="hidden" id="CStorage_Userid" value="">
+    <input type="hidden" id="Username" value="">
+    <input type="hidden" id="Passwords" value="">
+	</div>
+    </script>
+
+        <!-- ****** Chat ****** -->
+	<script id="Chat" type="text/template">
+
+	<div>
+<div id="navbar" class="navbartop">
+    <center class="navtittle">Warehouse Sharing System</center>
+    <button id="opennav" class="openbtn">Menu</button>
+    <div class="loginlogout">
+        <div id="Userlogin" class="Userlogin" type="submit" value=""><a></a>Edit profile<p hidden id="edit" value=""></p>
+        </div> | <div id="Userlogout" class="Userlogout" type="submit" value="Logout"><a></a>Logout</div>
+    </div>
+</div>
+
+<div id="mySidebar" class="sidebar">
+    <a id="closenav" href="javascript:void(0)" class="closebtn">Close</a>
+    <a id="Gohome">Home</a>
+    <a id="GoMap">Map</a>
+    <a id="GoChatlist">Chat</a>
+    <a id="GoHistory">History</a>
+	<a id="GoReport">Report</a>
+    <a id="GoAbout">About</a>
+</div>
+
+<div id="messagepeople" class="messagepeople">
+
+</div>
+
+
+<div id="messagehistory" class="messagehistory">
+
+</div>
+
+<div>
+                <div id="messageoutsidebox">
+                              <center><input id="messageinput" name="messageinput" class="messageinput" type="text"  placeholder="Type your Message Here" maxlength="199">
+                              <div id="Sendmessageinput" class="Sendmessageinput" type="submit" value=""><a></a>Send</div></center>
+                </div>
+</div>
+<br><br>
+<center><div id="backbutton1" class="backbutton" type="submit" value="Back"><a></a>Back</div></center>
+<br><br>
+
+<!-- popup alert incomplete-->
+<div id="popupAlerincomplete" class="popOverlayAlert">
+    <div id="popupIncomplete" class="popupAlertWrongPasswordportrait">
+        <a class="active" id="btnCloseAlertIncomplete"><img class="btnpatternCloseAlert" src="./img/icon/icon_close2.png"
+                alt="HTML5 Icon"></img></a>
+        <br> <br>
+        <h3 class="txtblack">Insert text</h3>
+    </div>
+    </div>
+
+<input type="hidden" id="Chatlist_id" value="">
+    <input type="hidden" id="Storage_Username" value="">
+    <input type="hidden" id="CStorage_Userid" value="">
+    <input type="hidden" id="Username" value="">
+    <input type="hidden" id="Passwords" value="">
+	</div>
+    </script>
+
+            <!-- ****** Chat2 ****** -->
+	<script id="Chat2" type="text/template">
+
+	<div>
+<div id="navbar" class="navbartop">
+    <center class="navtittle">Warehouse Sharing System</center>
+    <button id="opennav" class="openbtn">Menu</button>
+    <div class="loginlogout">
+        <div id="Userlogin" class="Userlogin" type="submit" value=""><a></a>Edit profile<p hidden id="edit" value=""></p>
+        </div> | <div id="Userlogout" class="Userlogout" type="submit" value="Logout"><a></a>Logout</div>
+    </div>
+</div>
+
+<div id="mySidebar" class="sidebar">
+    <a id="closenav" href="javascript:void(0)" class="closebtn">Close</a>
+    <a id="Gohome">Home</a>
+    <a id="GoMap">Map</a>
+    <a id="GoChatlist">Chat</a>
+    <a id="GoHistory">History</a>
+	<a id="GoReport">Report</a>
+    <a id="GoAbout">About</a>
+</div>
+
+<div id="messagepeople" class="messagepeople">
+
+</div>
+
+<div id="messagehistory" class="messagehistory">
+
+</div>
+
+<div>
+                <div id="messageoutsidebox">
+                              <center><input id="messageinput" name="messageinput" class="messageinput" type="text"  placeholder="Type your Message Here" maxlength="199">
+                              <div id="Sendmessageinput" class="Sendmessageinput" type="submit" value=""><a></a>Send</div></center>
+                </div>
+</div>
+<br><br>
+<center><div id="backbutton1" class="backbutton" type="submit" value="Back"><a></a>Back</div></center>
+<br><br>
+
+<!-- popup alert incomplete-->
+<div id="popupAlerincomplete" class="popOverlayAlert">
+    <div id="popupIncomplete" class="popupAlertWrongPasswordportrait">
+        <a class="active" id="btnCloseAlertIncomplete"><img class="btnpatternCloseAlert" src="./img/icon/icon_close2.png"
+                alt="HTML5 Icon"></img></a>
+        <br> <br>
+        <h3 class="txtblack">Insert text</h3>
+    </div>
+    </div>
+
+<input type="hidden" id="Chatlist_id" value="">
+    <input type="hidden" id="Storage_Username" value="">
+    <input type="hidden" id="CStorage_Userid" value="">
+    <input type="hidden" id="Username" value="">
+    <input type="hidden" id="Passwords" value="">
+	</div>
+    </script>
+    
+    <!-- ****** Recommand ****** -->
+	<script id="Recommand" type="text/template">
+
+	<div>
+<div id="navbar" class="navbartop">
+    <center class="navtittle">Warehouse Sharing System</center>
+    <button id="opennav" class="openbtn">Menu<img id="hideshowmessage" class="newsss" src="./img/new-post-16.png" alt=""></button>
+    <div class="loginlogout">
+        <div id="Userlogin" class="Userlogin" type="submit" value=""><a></a>Edit profile<p hidden id="edit" value=""></p>
+        </div> | <div id="Userlogout" class="Userlogout" type="submit" value="Logout"><a></a>Logout</div>
+    </div>
+</div>
+
+<div id="mySidebar" class="sidebar">
+    <a id="closenav" href="javascript:void(0)" class="closebtn">Close</a>
+    <a id="Gohome">Home</a>
+    <a id="GoMap">Map</a>
+    <a id="GoChatlist">Chat<img id="hideshowmessage1" class="newsss" src="./img/new-post-16.png" alt=""></a>
+    <a id="GoHistory">History</a>
+	<a id="GoReport">Report</a>
+    <a id="GoAbout">About</a>
+</div>
+
+<p id="" class="Profiledetailstitle">Recommandation</p>
+	    <input type="hidden" id="CUsername" value="">
+    <input type="hidden" id="CPasswords" value="">
+    <input type="hidden" id="CStorage_Userid" value="">
+    <input type="hidden" id="Storage_Username" value="">
+    <div id="CrUserid">
+    <!-- <input type="text" id="CUserid" value=""> -->
+    </div>
+
+<div id="recommandlist">
+</div>
+
+<div id="Storagelist">
+<p> Recommended for you</p>
+</div>
+<div id="Storagelist1">
+</div>
+<div id="Storagelistlesssale">
+<p> Suggested for you</p>
+</div>
+<div id="countchat"></div>
+
+	</div>
+	</script>
+	
+    <!-- ****** About ****** -->
+	<script id="About" type="text/template">
+
+	<div>
+
+	<div id="navbar" class="navbartop">
+		<center class="navtittle">Warehouse Sharing System</center>
+		<button id="opennav" class="openbtn">Menu<img id="hideshowmessage" class="newsss" src="./img/new-post-16.png" alt=""></button>
+		<div class="loginlogout">
+			<div id="Userlogin" class="Userlogin" type="submit" value="">
+				<a></a>Edit profile
+				<p hidden id="edit" value=""></p>
+			</div>
+			|
+			<div id="Userlogout" class="Userlogout" type="submit" value="Logout">
+				<a></a>Logout
+			</div>
+		</div>
+	</div>
+
+	<div id="mySidebar" class="sidebar">
+		<a id="closenav" href="javascript:void(0)" class="closebtn">Close</a>
+		<a id="Gohome">Home</a> <a id="GoMap">Map</a> <a id="GoChatlist">Chat<img id="hideshowmessage1" class="newsss" src="./img/new-post-16.png" alt=""></a>
+		<a id="GoHistory">History</a>	<a id="GoReport">Report</a> <a id="GoAbout">About</a>
+	</div>
+
+	<div id="countchat"></div>
+
+	<div>
+		<a id="Home" class="homeicon">
+			<center>
+				<img class="icontitle" src="./img/logo.png" alt="">
+			</center>
+		</a>
+		<center>
+			<p id="" class="icontitle">Warehouse Sharing System</p>
+		</center>
+		<br>
+		<div class="About">
+			<p class="wordsbold">About</p>
+			<p>WShare will provide recommend storage services to users by
+				storage rating and status of storages. WShare allows individual
+				users to register their private place (shop, home) as temporary
+				storage. Warehouse sharing system can consider as a storage booking
+				management system. The objective of developing Warehouse sharing
+				system is to provide a convenient application for consumers to
+				minimize the waiting and finding time.</p>
+		</div>
+		<br>
+		<div class="Promblemssolved">
+			<p class="wordsbold">Promblems solved</p>
+			<p>several problems faced by online shopper which are long period
+				of parcel waiting time for consumers and difficulty for customers to
+				keep in track on the progress of delivery of parcels. Finding
+				temporary physical storage also a problem faced by people especially
+				students who go to study overseas.</p>
+		</div>
+		<br>
+		<div class="About">
+			<p class="wordsbold">Book a Place for Your Parcels or belonging Today</p>
+			<div class="profileimage"><img class="icontitle" src="./img/placeholder.png" alt=""></div>
+			<center><p>Find your storage</p></center>
+			<div class="profileimage"><img class="icontitle" src="./img/devices.png" alt=""></div>
+			<center><p>Book it Online</p></center>
+			<div class="profileimage"><img class="icontitle" src="./img/parcel.png" alt=""></div>
+			<center><p>Store your belonging and parcels</p></center>	
+		</div>
+	</div>
+	<br>
+	<br>
+	</div>
+
+
+	</div>
+	</script>
+	
+	    <!-- ****** Forgetpasswords ****** -->
+	<script id="Forgetpasswords" type="text/template">
+
+	<div>
+<div id="navbar" class="navbartop">
+    <center class="navtittle">Warehouse Sharing System</center>
+</div>
+
+<div>
+    <a id="Home" class="homeicon">
+        <center><img class="icontitle" src="./img/logo.png" alt=""></center>
+    </a>
+    <center>
+        <p id="" class="icontitle">Warehouse Sharing System</p>
+    </center>
+    <br>
+
+    <form id="Loginform" action="" class="Loginform">
+        <p class="hometxt">Retrieve Passwords</p>
+        <br>
+        Username:<input spellcheck="false" autocomplete="off" autocorrect="off" id="Username" type="text" name="USER" placeholder="e.g. Alex" value="" style="width:200px">
+        <br>
+        <div id="locatePasswords">
+        </div>
+        <br>
+        <div id="backforget" class="backforget" name="backforget"><a></a>back</div>
+        <div id="RetrievePasswords" class="RetrievePasswords" name="RetrievePasswords"><a></a>Retrieve Passwords</div>
+        <br>
+        <br>
+    </form>
+    <br>
+</div>
+
+<!-- popup alert incomplete-->
+<div id="popupAlerincomplete" class="popOverlayAlert">
+    <div id="popupIncomplete" class="popupAlertWrongPasswordportrait">
+        <a class="active" id="btnCloseAlertIncomplete"><img class="btnpatternCloseAlert" src="./img/icon/icon_close2.png"
+                alt="HTML5 Icon"></img></a>
+        <br> <br>
+        <h3 class="txtblack">Incomplete filling the form</h3>
+    </div>
+    </div>
+
+			<!-- popup alert answers all question -->
+			<div id="popupAlertloginagain" class="popOverlayAlert">
+				<div id="messagebox" class="popupAlertloginagainportrait">
+					<a class="active" id="btnClosepoploginagain" name="btnClosepoploginagain"><img class="btnpatternClose" src="./img/icon/icon_close2.png"  alt="HTML5 Icon" ></img></a>
+					<br><br>
+					<h3 class="txtblack">Invalid username</h3>
+
+				</div>
+			</div>
+
+	</div>
+	</script>
+	
+	    <!-- ****** Report ****** -->
+	<script id="Report" type="text/template">
+
+	<div>
+
+	<div id="navbar" class="navbartop">
+		<center class="navtittle">Warehouse Sharing System</center>
+		<button id="opennav" class="openbtn">Menu<img id="hideshowmessage" class="newsss" src="./img/new-post-16.png" alt=""></button>
+		<div class="loginlogout">
+			<div id="Userlogout" class="Userlogout" type="submit" value="Logout">
+				<a></a>Logout
+			</div>
+		</div>
+	</div>
+
+<div id="mySidebar" class="sidebar">
+    <a id="closenav" href="javascript:void(0)" class="closebtn">Close</a>
+    <a id="Gohome">Home</a>
+    <a id="GoMap">Map</a>
+    <a id="GoChatlist">Chat<img id="hideshowmessage1" class="newsss" src="./img/new-post-16.png" alt=""></a>
+    <a id="GoHistory">History</a>
+	<a id="GoReport">Report</a>
+    <a id="GoAbout">About</a>
+</div>
+
+	<div id="bookingreport">
+		<p class="Profiledetailstitle">Report</p>
+		<br>
+		<p class="Profiledetailstitle" style="text-align: center;">Booking Summary Report</p>
+		<div id="alluser"> 
+				<table rules="all" id="allusertable" class="reporttablesize">
+					<tr class="reporttitlecolor">
+						<td class="size"><strong class="txtblack">1st Quarter Book </strong></td>
+						<td class="size"><strong class="txtblack">2nd Quarter Book </strong></td>
+						<td class="size"><strong class="txtblack">3rd Quarter Book </strong></td>
+						<td class="size"><strong class="txtblack">4th Quarter Book </strong></td>
+						<td class="size" style="background: lightslategray;"><strong class="txtblack">Total Book</strong></td>
+						<td class="size"><strong class="txtblack">1st Quarter Payment </strong></td>
+						<td class="size"><strong class="txtblack">2nd Quarter Payment </strong></td>
+						<td class="size"><strong class="txtblack">3rd Quarter Payment </strong></td>
+						<td class="size"><strong class="txtblack">4th Quarter Payment </strong></td>
+						<td class="size" style="background: lightslategray;"><strong class="txtblack">Total Payment</strong></td>
+					</tr>
+				</table>
+		</div>
+		<br>
+		<br>
+		<div style="margin-left:auto; margin-right:auto; width:90%; height:50%;">
+		<center><canvas id="myChart"></canvas></center>
+		</div>
+		<br>
+		<br>
+		<p class="Profiledetailstitle" style="text-align: center;">Booking Details</p>
+		<div id="allbooking"> 
+				<table rules="all" id="allbookingtable" class="reporttablesize">
+					<tr class="reporttitlecolor">
+						<td class="size"><strong class="txtblack">Booking id</strong></td>
+						<td class="size"><strong class="txtblack">UserP id</strong></td>
+						<td class="size"><strong class="txtblack">UserS id</strong></td>
+						<td class="size"><strong class="txtblack">Booking Quantity</strong></td>
+						<td class="size"><strong class="txtblack">Booking Details</strong></td>
+						<td class="size"><strong class="txtblack">Booking Checkin</strong></td>
+						<td class="size"><strong class="txtblack">Booking Checkout</strong></td>
+						<td class="size"><strong class="txtblack">Booking Days</strong></td>
+						<td class="size"><strong class="txtblack">Payment Amount</strong></td>
+						<td class="size"><strong class="txtblack">Payment Bank</strong></td>
+						<td class="size"><strong class="txtblack">Booking Date</strong></td>
+						<td class="size"><strong class="txtblack">Delete Booking</strong></td>
+						<td class="size"><strong class="txtblack">Edit Booking</strong></td>
+					</tr>
+				</table>
+		</div>
+	</div>
+	<br><br>
+	<center><div id="downloadreport" class="backforget" name="downloadreport"><a></a>Download</div>
+	<div id="backhomereport" class="backforget" name="backhomereport"><a></a>Back</div></center>
+	<br>
+
+	<div id="countchat"></div>
+	<br>
+	</div>
+	</script>
+	
+		    <!-- ****** ReportUser ****** -->
+	<script id="ReportUser" type="text/template">
+
+	<div>
+
+	<div id="navbar" class="navbartop">
+		<center class="navtittle">Warehouse Sharing System</center>
+		<button id="opennav" class="openbtn">Menu<img id="hideshowmessage" class="newsss" src="./img/new-post-16.png" alt=""></button>
+		<div class="loginlogout">
+			<div id="Userlogout" class="Userlogout" type="submit" value="Logout">
+				<a></a>Logout
+			</div>
+		</div>
+	</div>
+
+<div id="mySidebar" class="sidebar">
+    <a id="closenav" href="javascript:void(0)" class="closebtn">Close</a>
+    <a id="Gohome">Home</a>
+    <a id="GoMap">Map</a>
+    <a id="GoChatlist">Chat<img id="hideshowmessage1" class="newsss" src="./img/new-post-16.png" alt=""></a>
+    <a id="GoHistory">History</a>
+	<a id="GoReport">Report</a>
+    <a id="GoAbout">About</a>
+</div>
+
+	<div id="bookingreport">
+		<p class="Profiledetailstitle">Report</p>
+		<br>
+    	<center><div id="Historybook" class="Download" type="submit" value=""><a></a>Booking</div>
+   		<div id="Historyorder" class="Download" type="submit" value=""><a></a>Order</div></center>
+		<br>
+		<div id="graphbooking" style="margin-left:auto; margin-right:auto; width:90%; height:50%;">
+		<p class="Profiledetailstitle" style="text-align: center;">Booking Summary Report</p>
+		<br>
+		<center><canvas id="myChart"></canvas></center>
+		</div>
+		<div id="graphorder" style="margin-left:auto; margin-right:auto; width:90%; height:50%;">
+		<p class="Profiledetailstitle" style="text-align: center;">Order Summary Report</p>
+		<br>
+		<center><canvas id="myChart1"></canvas></center>
+		</div>
+	</div>
+	<br>
+	<center><div id="backhomereport" class="backforget" name="backhomereport"><a></a>Back</div></center>
+	<br>
+
+	<div id="countchat"></div>
+	<br>
+	</div>
+	</script>
+	
+			    <!-- ****** Logout ****** -->
+	<script id="Logout" type="text/template">
+
+	<div>
+<div id="navbar" class="navbartop">
+    <center class="navtittle">Warehouse Sharing System</center>
+</div>
+
+<div>
+    <a id="Home" class="homeicon">
+        <center><img class="icontitle" src="./img/logo.png" alt=""></center>
+    </a>
+    <center>
+        <p id="" class="icontitle">Warehouse Sharing System</p>
+    </center>
+    <br>
+
+    <form id="Loginform" action="" class="Loginform">
+        <br>
+		Are you sure you want to log out?
+        <br>
+        <div id="locatePasswords">
+        </div>
+        <br>
+        <div id="logoutno" class="backforgetno" name="logoutno"><a></a>No</div>
+        <div id="logoutyes" class="RetrievePasswords" name="logoutyes"><a></a>Yes</div>
+        <br>
+        <br>
+    </form>
+    <br>
+</div>
+
+	</div>
+	</script>
+	
+				<!-- ****** Admin Edit ****** -->
+	<script id="AdminEdit" type="text/template">
+	<div>
+
+	</div>
+	</script>
+	
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCxlc6LyTRqAfj1xzIQM2vNL2mCl4jm2Hk&sensor=false&libraries=geometry, places"></script>
+<!-- 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> -->
+	<script src="./lib/jquery.js"></script>
+	<script src="./lib/jspdf.min.js"></script>
+	<script src="./lib/router.js"></script>
+	<script src="./lib/fastclick.js"></script>
+    <script src="./lib/handlebars.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script type="text/javascript" src="./js/AdminEditView.js"></script>
+    <script type="text/javascript" src="./js/LogoutView.js"></script>
+    <script type="text/javascript" src="./js/ReportUserView.js"></script>
+    <script type="text/javascript" src="./js/ReportView.js"></script>
+    <script type="text/javascript" src="./js/ForgetpasswordsView.js"></script>
+    <script type="text/javascript" src="./js/AboutView.js"></script>
+    <script type="text/javascript" src="./js/Chat2View.js"></script>
+    <script type="text/javascript" src="./js/ChatView.js"></script>
+    <script type="text/javascript" src="./js/ChatlistView.js"></script>
+	<script type="text/javascript" src="./js/RecommandView.js"></script>
+	<script type="text/javascript" src="./js/BookingView.js"></script>
+	<script type="text/javascript" src="./js/EditView.js"></script>
+	<script type="text/javascript" src="./js/HistoryView.js"></script>
+	<script type="text/javascript" src="./js/HomeView.js"></script>
+	<script type="text/javascript" src="./js/LoginView.js"></script>
+	<script type="text/javascript" src="./js/MapView.js"></script>
+	<script type="text/javascript" src="./js/RegisterView.js"></script>
+	<script type="text/javascript" src="./js/StorageView.js"></script>
+	<script type="text/javascript" src="./js/wshare.js"></script>
+</body>
+</html>
